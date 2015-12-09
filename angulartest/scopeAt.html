@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myapp'>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="framework/angular-1.3.0/angular.js"></script>
+    </head>
+    <body>
+    	  <div ng-controller="ctrl">
+    	  	<drink flavor="{{ctrlFlavor}}"></drink>
+    	  </div>
+    </body>
+    <script type="text/javascript">
+      var APP=angular.module('myapp',[]);
+      APP.controller('ctrl',['$scope',function($scope){
+      	$scope.ctrlFlavor="百威";
+      }]);
+      APP.directive('drink',function(){
+        return {
+          restrict:'AE',
+          scope:{
+            flavor:'@'
+          }
+          template:'<div>{{flavor}}</div>',
+          link:function(scope,element,attrs){
+             scope.flavor=attrs.flavor;
+          }
+        }
+
+      });
+    </script>
+</html>

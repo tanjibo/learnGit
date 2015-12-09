@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myapp'>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="framework/angular-1.3.0/angular.js"></script>
+    </head>
+
+    <body>
+    	<hello>
+    		<div>nameeeeee</div>
+    	</hello>
+    </body>
+    	<script type="text/javascript">
+    	var app=angular.module('myapp',[]);
+    	app.directive('hello',function(){
+    		return {
+    			restrict:'AECM',
+    			template:'<div>hellow<div ng-transclude></div></div>',
+    			//templateUrl:'directive_tmpls.html',
+    			transclude:true,
+    			link:function(){
+    				//操作dom
+    			}
+    			//replace:true,
+    		}
+    	})
+    	// app.run(function($templateCache){
+    	// 	$templateCache.put('aa.html','<div>ddddd<div ng-transclude></div></div>')
+    	// });
+    	// app.directive('hello',function($templateCache){
+    	// 	return {
+    	// 		restrict:'AECM',
+    	// 		template:$templateCache.get('aa.html'),
+    	// 		replace:true,
+    	// 	}
+    	// })
+    	</script>
+</html>
