@@ -13,10 +13,19 @@
  
  
 #回退版本  
- git log(命令显示从最近到最远的提交日志)  
- git log --pretty=oneline (查看提交日志，让显示成一行)  
- 上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100  
- git reset --head HEAD^ (回退到上一个版本)  
- git reset --head 53434 (回退到指定的版本,这数字可以通过git log 查看出来)  
- git reflog (记录每一次操作的命令)  
+ git log(命令显示从最近到最远的提交日志)    
+ git log --pretty=oneline (查看提交日志，让显示成一行)    
+    上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100    
+ git reset --head HEAD^ (回退到上一个版本)    
+ git reset --head 53434 (回退到指定的版本,这数字可以通过git log 查看出来)    
+ git reflog (记录每一次操作的命令)    
+ 
+#分支操作
+查看分支：git branch  
+创建分支：git branch <name>  
+切换分支：git checkout <name>  
+创建+切换分支：git checkout -b <name>  
+合并某分支到当前分支：git merge <name>  
+删除分支：git branch -d <name>  
+
  
